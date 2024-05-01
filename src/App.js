@@ -11,15 +11,21 @@ function App() {
     <div className="dark:bg-slate-800">
       <Header />
       <Routes>
-        <Route path="/" element={<MovieList type="now_playing" />} />
+        <Route path="/" element={<MovieList type="movie/now_playing" />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/movies/popular" element={<MovieList type="popular" />} />
-        <Route path="/movies/top" element={<MovieList type="top_rated" />} />
+        <Route
+          path="/movies/popular"
+          element={<MovieList type="movie/popular" />}
+        />
+        <Route
+          path="/movies/top"
+          element={<MovieList type="movie/top_rated" />}
+        />
         <Route
           path="/movies/upcoming"
-          element={<MovieList type="upcoming" />}
+          element={<MovieList type="movie/upcoming" />}
         />
-        <Route path="search" element={<Search />} />
+        <Route path="search" element={<Search type="search/movie" />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

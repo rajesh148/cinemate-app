@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-const useFetch = (type) => {
+const useFetch = (type, queryParam = "") => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const cache = useRef({});
-  const url = `https://api.themoviedb.org/3/movie/${type}?api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `https://api.themoviedb.org/3/${type}?api_key=${process.env.REACT_APP_API_KEY}&query=${queryParam}`;
 
   useEffect(() => {
     if (!url) return;
