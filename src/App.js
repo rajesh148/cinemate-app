@@ -8,22 +8,25 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-darkbg">
       <Header />
       <Routes>
-        <Route path="/" element={<MovieList type="movie/now_playing" />} />
+        <Route
+          path="/"
+          element={<MovieList type="movie/now_playing" title="Home" />}
+        />
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route
           path="/movies/popular"
-          element={<MovieList type="movie/popular" />}
+          element={<MovieList type="movie/popular" title="Popular" />}
         />
         <Route
           path="/movies/top"
-          element={<MovieList type="movie/top_rated" />}
+          element={<MovieList type="movie/top_rated" title="Top Rated" />}
         />
         <Route
           path="/movies/upcoming"
-          element={<MovieList type="movie/upcoming" />}
+          element={<MovieList type="movie/upcoming" title="Upcoming" />}
         />
         <Route path="search" element={<Search type="search/movie" />} />
         <Route path="*" element={<PageNotFound />} />

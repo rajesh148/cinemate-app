@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-white shadow m-4 dark:bg-gray-800">
@@ -11,7 +11,7 @@ const Footer = () => {
           </Link>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
             <a
               href="#"
@@ -39,7 +39,7 @@ const Footer = () => {
               GitHub
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </footer>
   );

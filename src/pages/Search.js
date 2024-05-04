@@ -2,11 +2,13 @@ import React from "react";
 import Card from "../components/Card";
 import useFetch from "../hooks/useFetch";
 import { useSearchParams } from "react-router-dom";
+import useUpdateTitle from "../hooks/useUpdateTitle";
 
 const Search = ({ type }) => {
   const [searchParams] = useSearchParams();
   const queryTerm = searchParams.get("q");
   const { data: movies, loading, error } = useFetch(type, queryTerm);
+  useUpdateTitle(`Search results for ${queryTerm}`);
   return (
     <main>
       <section className="py-7">
