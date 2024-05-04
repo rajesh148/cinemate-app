@@ -7,8 +7,8 @@ import useUpdateTitle from "../hooks/useUpdateTitle";
 const MovieDetail = () => {
   const [movie, setMovie] = useState({});
   const params = useParams();
-  const image = poster_path
-    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+  const image = movie?.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : backupImg;
 
   useEffect(() => {
