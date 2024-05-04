@@ -7,7 +7,9 @@ import useUpdateTitle from "../hooks/useUpdateTitle";
 const MovieDetail = () => {
   const [movie, setMovie] = useState({});
   const params = useParams();
-  const image = backupImg; // `https://image.tmdb.org/t/p/w500${poster_path}`;
+  const image = poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : backupImg;
 
   useEffect(() => {
     const getMovieData = async () => {
@@ -26,7 +28,7 @@ const MovieDetail = () => {
     <main>
       <section className="flex justify-around flex-wrap py-5">
         <div className="max-w-sm">
-          <img src={backupImg} alt={movie.title} />
+          <img src={image} alt={movie.title} />
         </div>
 
         <div className="max-w-2xl text-gray-700 text-lg dark:text-white">
