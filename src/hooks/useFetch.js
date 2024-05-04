@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useFetch = (type, queryParam = "") => {
   const [data, setData] = useState(null);

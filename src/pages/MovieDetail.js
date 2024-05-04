@@ -22,7 +22,7 @@ const MovieDetail = () => {
     };
 
     getMovieData();
-  }, []);
+  }, [params.id]);
   useUpdateTitle(movie?.title);
   return (
     <main>
